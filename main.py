@@ -251,13 +251,13 @@ while True:
     if config["save_video"]:
         writer.write(frame)
 
-    # 按下鍵盤 S 或 s ，直到出現 "Saved successfully" ，即儲存偵測區域資料
+    # 按下鍵盤 S 或 s 出現 "Save successfully" ，儲存偵測區域資料
     if cv2.waitKey(1) == ord('S') or cv2.waitKey(1) == ord('s'):
         with open(yaml_file, 'w+') as output_data:
             yaml.safe_dump(data, output_data, allow_unicode=None, default_flow_style=None, sort_keys=None)
             print("Saved successfully")
 
-    # 按下鍵盤 Esc，即關閉影片
+    # 按下鍵盤 Esc 關閉影片
     if cv2.waitKey(1) == 27:
         break
 
